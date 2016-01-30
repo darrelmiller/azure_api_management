@@ -1,6 +1,6 @@
-\# API Management Bootcamp
+# API Management Bootcamp
 
-\#\# Exploring the Admin Portal
+## Exploring the Admin Portal
 
 Click Manage to open the Admin Portal
 
@@ -86,7 +86,7 @@ Add the trace flag
 
 Find the trace location and go and take a look
 
-\# Recap :
+# Recap :
 
 > We fronted and API with APIM
 >
@@ -96,7 +96,7 @@ Find the trace location and go and take a look
 >
 > We found out how to debug APIM behavior
 
-\#\# Helping Your Developer Users
+## Helping Your Developer Users
 
 <img src="media/image21.png" width="624" height="360" />
 
