@@ -4,31 +4,31 @@
 
 Click Manage to open the Admin Portal
 
-<img src="media/image1.png" width="302" height="88" />
+![](media/image1.png)
 
 Select APIs in the sidebar to add an API
 
-<img src="media/image2.png" width="309" height="95" />
+![](media/image2.png)
 
 Go to the Settings tab and enter the Web API Name and the backend URL. For our sample case, enter the conference URL as shown below.
 
-<img src="media/image3.png" width="624" height="353" />
+![](media/image3.png)
 
 Go to the Products section using the sidebar.
 
-<img src="media/image4.png" width="624" height="218" />
+![](media/image4.png)
 
 Add a product
 
-<img src="media/image5.png" width="368" height="228" />
+![](media/image5.png)
 
 Free products don’t require keys that are managed and authorized by the portal. Go back to edit the product.
 
-<img src="media/image6.png" width="477" height="269" />
+![](media/image6.png)
 
 Click Add API to Product.
 
-<img src="media/image7.png" width="624" height="98" />
+![](media/image7.png)
 
 Select Conference Api and Save.
 
@@ -36,53 +36,53 @@ Publish the Product so that we can use it.
 
 Hit the backend API using your preferred HTTP request making tool. Browser, Postman, Fiddler, Runscope, etc.
 
-<img src="media/image8.png" width="616" height="46" />
+![](media/image8.png)
 
 Hit the frontend API
 
-<img src="media/image9.png" width="574" height="46" />
+![](media/image9.png)
 
 Policies
 
-<img src="media/image10.png" width="624" height="317" />
+![](media/image10.png)
 
 Check the Header
 
-<img src="media/image11.png" width="624" height="129" />
+![](media/image11.png)
 
 Cleanup headers
 
-<img src="media/image12.png" width="624" height="91" />
+![](media/image12.png)
 
 Change API to use Starter Product
 
-<img src="media/image13.png" width="624" height="181" />
+![](media/image13.png)
 
 Review policy scope and select Starter
 
-<img src="media/image14.png" width="624" height="129" />
+![](media/image14.png)
 
 Click View Effective Policy
 
-<img src="media/image15.png" width="624" height="249" />
+![](media/image15.png)
 
 Request that will fail
 
-<img src="media/image16.png" width="368" height="67" />
+![](media/image16.png)
 
 Get a subscription key
 
-<img src="media/image17.png" width="624" height="245" />
+![](media/image17.png)
 
-<img src="media/image18.png" width="624" height="167" />
+![](media/image18.png)
 
 Add the subscription key
 
-<img src="media/image19.png" width="478" height="81" />
+![](media/image19.png)
 
 Add the trace flag
 
-<img src="media/image20.png" width="473" height="100" />
+![](media/image20.png)
 
 Find the trace location and go and take a look
 
@@ -98,58 +98,150 @@ Find the trace location and go and take a look
 
 ## Helping Your Developer Users
 
-<img src="media/image21.png" width="624" height="360" />
+![](media/image21.png)
 
-Social Logins Available in the Admin Portal
+Go to \`Sign Up Now\`
 
-<img src="media/image22.png" width="535" height="333" />
-
-<img src="media/image23.png" width="624" height="779" />
+![](media/image22.png)
 
 Reply to your confirmation email
 
 Subscribe to a Product
 
-<img src="media/image24.png" width="624" height="446" />
+![](media/image23.png)
 
-And get their keys
+And get your keys
 
-<img src="media/image25.png" width="619" height="391" />
+![](media/image24.png)
 
 Register an app
 
-<img src="media/image26.png" width="508" height="467" />
+![](media/image25.png)
 
 And submit to App store.
 
-<img src="media/image27.png" width="624" height="86" />
+![](media/image26.png)
 
 Publish from the admin portal
 
-<img src="media/image28.png" width="624" height="248" />
+![](media/image27.png)
 
 API Docs and Console
 
-<img src="media/image29.png" width="624" height="379" />
+![](media/image28.png)
 
 Houston, we have a problem. That’s not exactly useful documentation for the API.
 
 You can do it all yourself, by creating custom Content pages,
 
-<img src="media/image30.png" width="624" height="330" />
+![](media/image29.png)
 
 And hooking them up to the menu.
 
-<img src="media/image31.png" width="624" height="398" />
+![](media/image30.png)
 
-<img src="media/image32.png" width="471" height="147" />
+![](media/image31.png)
 
 But we would rather not re-implement the docs pages with the Try functionality.
 
 So back to the admin portal
 
-<img src="media/image33.png" width="624" height="223" />
+![](media/image32.png)
 
-<img src="media/image34.png" width="592" height="216" />
+We can add operations manually
 
-<img src="media/image35.png" width="624" height="508" />
+![](media/image33.png)
+
+![](media/image34.png)
+
+Let’s take a short detour over to policies,
+
+![](media/image35.png)
+
+The defined operations are now showing up as a policy scope.
+
+![](media/image36.png)
+
+The configured Rewrite rule is simply a policy.
+
+Back to the Speakers Operation configuration and let us define some known responses.
+
+![](media/image37.png)
+
+Returning to the developer console we can see the documentation for our Speakers operation.
+
+![](media/image38.png)
+
+For a large API, creating all the operation descriptions could take a while. Another option is to import the operations based on an API Description language.
+
+.Net APIs can generate an API Description language document using a library called Swash buckle.
+
+![](media/image39.png)
+
+Review imported operations,
+
+![](media/image40.png)
+
+And parameters,
+
+![](media/image41.png)
+
+And responses,
+
+![](media/image42.png)
+
+Response types are defined based on formatters available.
+
+Swashbuckle doesn’t support representation examples out of the box unfortunately. So they need to be added manually. Unfortunately, importing an existing API doesn’t merge.
+
+![](media/image43.png)
+
+So, lets head back over to the developer console to see what this import gives us.
+
+![](media/image44.png)
+
+Getting ASP.Net Routing to sync with Swashbuckle and OpenAPI specification can be challenging. There is a risk that for a non-trivial API the effort to generate the right API description automatically and deal with merge issues, the less time saved over just manually defining the API.
+
+A compromise is to hand craft the OpenAPI specification and then import that.
+
+![](media/image45.png)
+
+### Styling
+
+![](media/image46.png)
+
+## Security
+
+In order to protect the origin server from direct access we need to enable security on the origin server. Change the Web service URL to use https scheme as basic auth is enabled for https for this particular API.
+
+![](media/image47.png)
+
+Setup the Basic Auth credentials to allow API Management to call the origin server. The password is “rocks”.
+
+![](media/image48.png)
+
+## User Authorization
+
+This is used to setup the Developer Console as a Client Application
+
+![](media/image49.png)
+
+Click on Manage Authorization Servers
+
+![](media/image50.png)
+
+And then Add Authorization Server and you are presented with the “Form From Hell”
+
+![](media/image51.png)
+
+Fortunately, it is much easier to actually secure your API. Go back to policies.
+
+![](media/image52.png)
+
+Place cursor in &lt;inbound&gt; element and select &lt;validate-jwt&gt;. Update as follows
+
+![](media/image53.png)
+
+The next step is to build a client that can authenticate using the OAuth provider. But that is an exercise to be left to the student!
+
+All the API Management documentation, reference materials, samples, howtos, videos and screencasts can be found at <http://aka.ms/apimrocks>
