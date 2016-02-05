@@ -1,6 +1,10 @@
 # API Management Bootcamp
 
+In this bootcamp, ~~lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis odio ante, iaculis vestibulum urna convallis nec. Morbi et pretium metus. Phasellus a tristique sapien. Suspendisse semper ligula vel ex suscipit, tincidunt placerat velit blandit. Pellentesque at ligula lacus. Maecenas nec malesuada purus. Proin a rhoncus enim. Vestibulum sapien risus, imperdiet non est non, rhoncus ornare sem. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras vitae convallis mi, nec imperdiet augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc ac est accumsan, hendrerit ligula eu, posuere elit. Quisque orci ante, ornare in purus a, vestibulum vulputate leo. Donec molestie est massa, sit amet tempor tortor ornare nec. Cras metus nisi, dapibus et interdum ut, fringilla nec arcu.~~
+
 ## Exploring the API Management Service and Portal
+
+~~Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis odio ante, iaculis vestibulum urna convallis nec. Morbi et pretium metus. Phasellus a tristique sapien. Suspendisse semper ligula vel ex suscipit, tincidunt placerat velit blandit. Pellentesque at ligula lacus. Maecenas nec malesuada purus. Proin a rhoncus enim. Vestibulum sapien risus, imperdiet non est non, rhoncus ornare sem. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras vitae convallis mi, nec imperdiet augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc ac est accumsan, hendrerit ligula eu, posuere elit. Quisque orci ante, ornare in purus a, vestibulum vulputate leo. Donec molestie est massa, sit amet tempor tortor ornare nec. Cras metus nisi, dapibus et interdum ut, fringilla nec arcu.~~
 
 ### Creating your API Management Service Instance
 
@@ -189,7 +193,7 @@
 
 1. Under the **Policy scope** header, select the **Starter** product from the list of all products.
 
-  ![](media/image14.png)  
+  ![](media/image14.png)
 
 1. Click the **View Effective Policy** link for the currently selected scope. Your policy should be identical to this:
 
@@ -253,152 +257,58 @@ In this exercise we:
 
 ## Helping Your Developer Users
 
-### Test
+~~Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis odio ante, iaculis vestibulum urna convallis nec. Morbi et pretium metus. Phasellus a tristique sapien. Suspendisse semper ligula vel ex suscipit, tincidunt placerat velit blandit. Pellentesque at ligula lacus. Maecenas nec malesuada purus. Proin a rhoncus enim. Vestibulum sapien risus, imperdiet non est non, rhoncus ornare sem. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras vitae convallis mi, nec imperdiet augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc ac est accumsan, hendrerit ligula eu, posuere elit. Quisque orci ante, ornare in purus a, vestibulum vulputate leo. Donec molestie est massa, sit amet tempor tortor ornare nec. Cras metus nisi, dapibus et interdum ut, fringilla nec arcu.~~
 
-![](media/image21.png)
+### Register for an Account
 
-Go to \`Sign Up Now\`
+1. Use an alternative browser or open up a private session in your browser of choice.
 
-![](media/image22.png)
+1. Navigate to the developer portal for your API. This can be found by adding **.portal** to the end of the name of your API Management account. For example, if your API Management account is named **sidneydemo**, your API URL is **https://sidneydemo.azure-api.net/** and your Developer Portal URL is **https://sidneydemo.portal.azure-api.net/**.
 
-Reply to your confirmation email
+  ![](media/alt_image24.png)
 
-Subscribe to a Product
+1. Click the **Sign In** link at the top-right corner of the page.
 
-![](media/image23.png)
+  ![](media/image21.png)
 
-And get your keys
+1. Click the **Sign up now** link. Fill out the form using a real e-mail address and then click the **Sign up** button.
 
-![](media/image24.png)
+  ![](media/image22.png)
 
-Register an app
+1. You will receive a confirmation e-mail. Reply to that e-mail to verify your account.
 
-![](media/image25.png)
+  ![](media/alt_image25.png)
 
-And submit to App store.
+  > **Note:** This e-mail can appear in your Junk/Spam folders. Please check those folders before clicking the *Resend Verification Email* button.
 
-![](media/image26.png)
+1. Once you have verified your e-mail, you will be automatically signed in to your account.
 
-Publish from the admin portal
+  ![](media/alt_image26.png)
 
-![](media/image27.png)
+1. Click the **Products** link at the top of the page to see a list of Products.
 
-API Docs and Console
+  ![](media/alt_image27.png)
 
-![](media/image28.png)
+1. Select the **Starter** product and click the **Subscribe** button. You will be prompted to confirm a **Subscription name**, you can leave that set to the default value and click the **Confirm** button.
 
-Houston, we have a problem. That’s not exactly useful documentation for the API.
+  ![](media/image23.png)
 
-You can do it all yourself, by creating custom Content pages,
+  ![](media/alt_image28.png)
 
-![](media/image29.png)
+1. You will now be taken back to your profile where you will see a list of your subscriptions. Locate the **Starter** subscription in the *Your Subscriptions* list and then locate the **Primary key** entry. Click the **Show** link to view the key. Record the value of the key.
 
-And hooking them up to the menu.
+  ![](media/image24.png)
 
-![](media/image30.png)
+1. Click the **Register application** button.
 
-![](media/image31.png)
+1. Register any app name and description.
 
-But we would rather not re-implement the docs pages with the Try functionality.
+  ![](media/image25.png)
 
-So back to the admin portal
+1. Click the **Submit** button to submit the application.
 
-![](media/image32.png)
+  ![](media/image26.png)
 
-We can add operations manually
+1. Click the **Submit for review** button. You will be asked to confirm your action. Click **OK**.
 
-![](media/image33.png)
-
-![](media/image34.png)
-
-Let’s take a short detour over to policies,
-
-![](media/image35.png)
-
-The defined operations are now showing up as a policy scope.
-
-![](media/image36.png)
-
-The configured Rewrite rule is simply a policy.
-
-Back to the Speakers Operation configuration and let us define some known responses.
-
-![](media/image37.png)
-
-Returning to the developer console we can see the documentation for our Speakers operation.
-
-![](media/image38.png)
-
-For a large API, creating all the operation descriptions could take a while. Another option is to import the operations based on an API Description language.
-
-.Net APIs can generate an API Description language document using a library called Swash buckle.
-
-![](media/image39.png)
-
-Review imported operations,
-
-![](media/image40.png)
-
-And parameters,
-
-![](media/image41.png)
-
-And responses,
-
-![](media/image42.png)
-
-Response types are defined based on formatters available.
-
-Swashbuckle doesn’t support representation examples out of the box unfortunately. So they need to be added manually. Unfortunately, importing an existing API doesn’t merge.
-
-![](media/image43.png)
-
-So, lets head back over to the developer console to see what this import gives us.
-
-![](media/image44.png)
-
-Getting ASP.Net Routing to sync with Swashbuckle and OpenAPI specification can be challenging. There is a risk that for a non-trivial API the effort to generate the right API description automatically and deal with merge issues, the less time saved over just manually defining the API.
-
-A compromise is to hand craft the OpenAPI specification and then import that.
-
-![](media/image45.png)
-
-### Styling
-
-![](media/image46.png)
-
-## Security
-
-In order to protect the origin server from direct access we need to enable security on the origin server. Change the Web service URL to use https scheme as basic auth is enabled for https for this particular API.
-
-![](media/image47.png)
-
-Setup the Basic Auth credentials to allow API Management to call the origin server. The password is “rocks”.
-
-![](media/image48.png)
-
-## User Authorization
-
-This is used to setup the Developer Console as a Client Application
-
-![](media/image49.png)
-
-Click on Manage Authorization Servers
-
-![](media/image50.png)
-
-And then Add Authorization Server and you are presented with the “Form From Hell”
-
-![](media/image51.png)
-
-Fortunately, it is much easier to actually secure your API. Go back to policies.
-
-![](media/image52.png)
-
-Place cursor in &lt;inbound&gt; element and select &lt;validate-jwt&gt;. Update as follows
-
-![](media/image53.png)
-
-The next step is to build a client that can authenticate using the OAuth provider. But that is an exercise to be left to the student!
-
-All the API Management documentation, reference materials, samples, howtos, videos and screencasts can be found at <http://aka.ms/apimrocks>
+  ![](media/image27.png)
