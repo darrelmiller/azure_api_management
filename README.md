@@ -1,6 +1,8 @@
 # API Management Bootcamp
 
-## Creating your API Management Service Instance
+## Exploring the API Management Service and Portal
+
+### Creating your API Management Service Instance
 
 1. Open your browser to (http://manage.windowsazure.com).
 
@@ -12,7 +14,7 @@
 
   > **Note**: Creating an API Management instance can take up to thirty minutes.
 
-## Creating Your First API
+### Creating Your First API
 
 1. Once your service instance is ready, select the instance and click Manage to open the Admin Portal.
 
@@ -46,11 +48,13 @@
 
   ![](media/alt_image6.png)
 
-## Creating Your First Product
+### Creating Your First Product
 
-1. Go to the Products section using the sidebar.
+1. Go to the **Products** section using the sidebar.
 
   ![](media/image4.png)
+
+1. View the list of your existing products.
 
 1. Add a new product and ensure that you *deselect* the **Require subscription** option.
 
@@ -74,71 +78,182 @@
 
   > **Note:** Many tools are avilable such as Postman, Fiddler, Hurl.it and Runscope. In these examples we will use screenshots from *Postman*.
 
-1. Make a **GET** request to the back-end API endpoint: **http://conferenceapi.azurewebsites.net/**
+1. Make a **GET** request to the back-end API endpoint: **http://conferenceapi.azurewebsites.net**
 
   ![](media/alt_image4.png)
 
-1. Make a **GET** request to the front-end API endpoint. This is the URL you recorded earlier when you created the API. In this example, we will use the URL: **http://sidneydemo.azure-api.net/**
+1. Make a **GET** request to the front-end API endpoint. This is the URL you recorded earlier when you created the API. In this example, we will use the URL: **http://sidneydemo.azure-api.net**
 
-  ![](media/alt_image.png)
+  ![](media/alt_image7.png)
 
-## Defining a Policy
+### Defining a Request/Response Policy
 
-1. Policies
+1. Return to the API management portal.
 
-![](media/image10.png)
+1. Go to the **Policies** section using the sidebar.
 
-Check the Header
+  ![](media/alt_image8.png)
 
-![](media/image11.png)
+1. Click the **Configure Policy** link to enable the editor.
 
-Cleanup headers
+  ![](media/image10.png)
 
-![](media/image12.png)
+1. In the editor, remove the comments from the policy.
 
-Change API to use Starter Product
+1. In the editor, locate the *self-closing* **Inbound tag**:
 
-![](media/image13.png)
+  ```xml
+  <inbound />
+  ```
 
-Review policy scope and select Starter
+1. Replace the tag with the following content:
 
-![](media/image14.png)
+  ```xml
+  <inbound>
+      <check-header name="User-Agent" failed-check-httpcode="400"
+          failed-check-error-message="User Agent is a required header"
+          ignore-case="true">
+      </check-header>
+  </inbound>
+  ```
 
-Click View Effective Policy
+1. In the editor, locate the *self-closing* **Outbound tag**:
 
-![](media/image15.png)
+  ```xml
+  <outbound />
+  ```
 
-Request that will fail
+1. Replace the tag with the following content:
 
-![](media/image16.png)
+  ```xml
+  <outbound>
+      <set-header name="X-AspNet-Version" exists-action="delete" />
+      <set-header name="X-Powered-By" exists-action="delete" />
+      <set-header name="pragma" exists-action="delete" />
+	</outbound>
+  ```
 
-Get a subscription key
+1. Click the **Save** button.
 
-![](media/image17.png)
+1. At this point your policy should look like this:
 
-![](media/image18.png)
+  ![](media/alt_image9.png)
 
-Add the subscription key
+1. Return to your preferred HTTP request making tool.
 
-![](media/image19.png)
+  > **Note:** In these examples we will use screenshots from *Fiddler*.
 
-Add the trace flag
+1. Make a **GET** request to the API endpoint. If your tool supports it, remove the **User-Agent** header. In this example, we will use the URL: **http://sidneydemo.azure-api.net**
 
-![](media/image20.png)
+  > **Note:** Many tools will implicitly include a *User-Agent* header. Your request may not necessarily fail if the header is specified.
 
-Find the trace location and go and take a look
+  ![](media/alt_image13.png)
 
-# Recap :
+1. Your request should fail with a status code of **400 (Bad Request)**.
 
-> We fronted and API with APIM
->
-> We manipulated the message
->
-> We protected the API from unauthorized and abusive usage
->
-> We found out how to debug APIM behavior
+  ![](media/alt_image10.png)
+
+1. Add the **User-Agent** header back to your tool and specify any value. Make another **GET** request using this header.
+
+  ![](media/alt_image11.png)
+
+1. Your request should succeed with a status code of **200 (OK)** and contain a JSON body in the response.
+
+  ![](media/alt_image14.png)
+
+  ![](media/alt_image12.png)
+
+### Combining Policies and Products
+
+1. Return to the API management portal.
+
+1. Got to the **APIs** section using the sidebar.
+
+  ![](media/alt_image15.png)
+
+1. Select the **Conference Api** option.
+
+1. Under the **Products** header, click the **Add API to Products** link.
+
+  ![](media/alt_image16.png)
+
+1. Select the **Starter** product and click the **Save** button.
+
+  ![](media/alt_image17.png)
+
+1. Click the **Delete** button next to the **Free** product in the list of Products associated with the *Conference Api* API. You will be prompted to confirm the action, click the **Yes, remove it** button.
+
+  ![](media/alt_image18.png)
+
+1. Go to the **Policies** section using the sidebar.
+
+1. Under the **Policy scope** header, select the **Starter** product from the list of all products.
+
+  ![](media/image14.png)  
+
+1. Click the **View Effective Policy** link for the currently selected scope. Your policy should be identical to this:
+
+  ![](media/image15.png)
+
+1. Return to your preferred HTTP request making tool.
+
+  > **Note:** In these examples we will use screenshots from *Postman*.
+
+1. Make a **GET** request to the API endpoint. Ensure that a **User-Agent** header is specified.
+
+  ![](media/alt_image19.png)
+
+  > **Note:** Your request failed because we have not specified a subscription key as a request header.
+
+1. Return to the API management portal.
+
+1. Go to the **Users** section using the sidebar.
+
+  ![](media/image17.png)
+
+1. Select the **Administrator** user to view the user's details. Locate the **Starter** subscription in the *Subscriptions* list and then locate the **Primary key** entry. Click the **Show** link to view the key. Record the value of the key.
+
+  ![](media/image18.png)
+
+1. Return to your preferred HTTP request making tool.
+
+  > **Note:** In these examples we will use screenshots from *Postman*.
+
+1. Make a **GET** request to the API endpoint. Ensure that the following headers are specified:
+
+  - **User-Agent:** any value
+  - **Ocp-Apim-Subscription-Key:** the value for the key you recorded earlier
+
+  ![](media/alt_image20.png)
+
+1. Make another **GET** request to the API endpoint. Ensure that the following headers are specified:
+
+  - **User-Agent:** any value
+  - **Ocp-Apim-Subscription-Key:** the value for the key you recorded earlier
+  - **Ocp-Apim-Trace:** true
+
+  ![](media/alt_image21.png)
+
+  > **Note:** This header enables debug (trace) information for the API Management service.
+
+1. View the headers for your response and you will see a link to the location for the trace. Copy this url and navigate to it using your browser.
+
+  ![](media/alt_image22.png)
+
+  ![](media/alt_image23.png)
+
+### Recap
+
+In this exercise we:
+
+  - Created a front-end for our API with API Management
+  - We manipulated the contents of the request and response
+  - We protected the API from unauthorized and abusive usage
+  - We debugged API Management behavior
 
 ## Helping Your Developer Users
+
+### Test
 
 ![](media/image21.png)
 
