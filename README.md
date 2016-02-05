@@ -1,48 +1,90 @@
 # API Management Bootcamp
 
-## Exploring the Admin Portal
+## Creating your API Management Service Instance
 
-Click Manage to open the Admin Portal
+1. Open your browser to (http://manage.windowsazure.com).
 
-![](media/image1.png)
+1. Select the **API Management** option in the left navigation bar.
 
-Select APIs in the sidebar to add an API
+  ![](media/alt_image1.png)
 
-![](media/image2.png)
+1. Click the **+ New** button to create an instance of the *Api Management service*. You must specify a unique URL for this service instance. You must also specify a name for your Organization and an administrator e-mail (this does not need to be a real e-mail address).
 
-Go to the Settings tab and enter the Web API Name and the backend URL. For our sample case, enter the conference URL as shown below.
+  > **Note**: Creating an API Management instance can take up to thirty minutes.
 
-![](media/image3.png)
+## Creating Your First API
 
-Go to the Products section using the sidebar.
+1. Once your service instance is ready, select the instance and click Manage to open the Admin Portal.
 
-![](media/image4.png)
+  ![](media/image1.png)
 
-Add a product
+1. Select the APIs option in the sidebar to add an API.
 
-![](media/image5.png)
+  ![](media/image2.png)
 
-Free products don’t require keys that are managed and authorized by the portal. Go back to edit the product.
+1. Go to the **Settings** tab and enter the Web API Name and the backend URL. For our sample case, we assume that our API management instance is named **sidneydemo**:
 
-![](media/image6.png)
+  > **Note**: Ensure that you record the URL for your API before you click the **Save** button:
 
-Click Add API to Product.
+  - **Web API name**: Conference Api
+  - **Web service url**: http://conferenceapi.azurewebsites.net
+  - Ensure that the **HTTP** option is selected.
+  - Leave remaining options set to their default values.
 
-![](media/image7.png)
+  ![](media/alt_image2.png)
 
-Select Conference Api and Save.
+1. Got to the **Operations** tab and click the **Add Operation** link.
 
-Publish the Product so that we can use it.
+  ![](media/alt_image5.png)
 
-Hit the backend API using your preferred HTTP request making tool. Browser, Postman, Fiddler, Runscope, etc.
+1. On the **New Operation** screen, specify the following field values and then click the **Save** button:
 
-![](media/image8.png)
+  - **HTTP verb**: GET
+  - **URL template**: /
+  - **Display name**: *
+  - Leave remaining options set to their default values.
 
-Hit the frontend API
+  ![](media/alt_image6.png)
 
-![](media/image9.png)
+## Creating Your First Product
 
-Policies
+1. Go to the Products section using the sidebar.
+
+  ![](media/image4.png)
+
+1. Add a new product and ensure that you *deselect* the **Require subscription** option.
+
+  ![](media/image5.png)
+
+  > **Note:** Free products don’t require keys that are managed and authorized by the portal.
+
+1. Select the **Free** product from your list of products to edit the product.
+
+  ![](media/image6.png)
+
+1. Click the **Add API to Product** link. Select the **Conference Api** option and then click the **Save** button.
+
+  ![](media/image7.png)
+
+1. Click the **Publish** button to publish the product for use.
+
+  ![](media/alt_image3.png)
+
+1. Open your preferred HTTP request making tool.
+
+  > **Note:** Many tools are avilable such as Postman, Fiddler, Hurl.it and Runscope. In these examples we will use screenshots from *Postman*.
+
+1. Make a **GET** request to the back-end API endpoint: **http://conferenceapi.azurewebsites.net/**
+
+  ![](media/alt_image4.png)
+
+1. Make a **GET** request to the front-end API endpoint. This is the URL you recorded earlier when you created the API. In this example, we will use the URL: **http://sidneydemo.azure-api.net/**
+
+  ![](media/alt_image.png)
+
+## Defining a Policy
+
+1. Policies
 
 ![](media/image10.png)
 
