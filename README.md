@@ -19,3 +19,7 @@ In this bootcamp, we will explore the various features of the API Management pla
 ## Bootcamp Part 3: Try-it-Yourself Lab
 
 [![](media/cover_image3.png)](open.md)
+
+## Learn More about API Management
+
+All the API Management documentation, reference materials, samples, how-tos, videos and screencasts can be found at **http://aka.ms/apimrocks**.

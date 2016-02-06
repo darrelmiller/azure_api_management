@@ -134,26 +134,30 @@ In this exercise we:
 
 > Setting up user authentication requires you to create a client application. This is beyond the scope of this bootcamp but it is easily something you can do on your own time. We have included screenshots to help you get started.
 
-This is used to setup the Developer Console as a Client Application
+- We can enabled user authentication using OAuth 2.0 for our API.
 
-![](media/image49.png)
+  ![](media/image49.png)
 
-Click on Manage Authorization Servers
+- First we must configure an authentication Server.
 
-![](media/image50.png)
+  ![](media/image50.png)
 
-And then Add Authorization Server and you are presented with the “Form From Hell”
+- To create an authentication server, you must fill out this MASSIVE form.
 
-![](media/image51.png)
+  > **TRY:** Complete this form to create an authentication server for OAuth 2.0 authentication.
 
-Fortunately, it is much easier to actually secure your API. Go back to policies.
+  ![](media/image51.png)
 
-![](media/image52.png)
+- Fortunately, it is much easier to actually secure your API. Go back to policies.
 
-Place cursor in &lt;inbound&gt; element and select &lt;validate-jwt&gt;. Update as follows
+  ![](media/image52.png)
 
-![](media/image53.png)
+- You will now update your policy
 
-The next step is to build a client that can authenticate using the OAuth provider. But that is an exercise to be left to the student!
+  > **TRY:** Place your mouse cursor in the &lt;inbound&gt; XML element and select &lt;validate-jwt&gt;. Update as shown below in the screenshot.
 
-All the API Management documentation, reference materials, samples, howtos, videos and screencasts can be found at <http://aka.ms/apimrocks>
+  ![](media/image53.png)
+
+- The next step is to build a client that can authenticate using the OAuth provider. But that is an exercise to be left to the student!
+
+  > **TRY:** Create a client application that supports OAuth 2.0.  You can do this using a web, desktop or mobile application.
