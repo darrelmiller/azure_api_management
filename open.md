@@ -1,98 +1,138 @@
-API Docs and Console
+# Evolving the API Management Endpoint
 
-![](media/image28.png)
+We are going to focus now on improving the API Management experience for our developers and evolving our endpoint by adding features such as authentication.
 
-Houston, we have a problem. That’s not exactly useful documentation for the API.
+## API Documentation
 
-You can do it all yourself, by creating custom Content pages,
+- From the developer's perspective, look at the **Conference Api** and specifically the single current operation.
 
-![](media/image29.png)
+  ![](media/image28.png)
 
-And hooking them up to the menu.
+- Houston, we have a problem. That’s not exactly useful documentation for the API.  You can do it all yourself, by creating custom Content pages.
 
-![](media/image30.png)
+  > **TRY:** Create a single custom content page and fill the page with information about your endpoint. This is completely up to you what you would like to put on the custom content page.
 
-![](media/image31.png)
+  ![](media/image29.png)
 
-But we would rather not re-implement the docs pages with the Try functionality.
+- It is not enough to create a content page, you need to hook it up to the menu. Once it is hooked up, you can view the content page from the developer perspective.
 
-So back to the admin portal
+  > **TRY:** Add your custom content page to the top (main) navigation menu. View this page using the developer account you created.
 
-![](media/image32.png)
+  ![](media/image30.png)
 
-We can add operations manually
+  ![](media/image31.png)
 
-![](media/image33.png)
+- But we would rather not re-implement the docs pages. Out of the box, they come with the Try functionality which is very useful.
 
-![](media/image34.png)
+  > **TRY:** Go back to the API page describing your single current operation, try invoking that operation using the "Try" functionality on the page.
 
-Let’s take a short detour over to policies,
+- We will navigate from the developer portal to the admin portal.
 
-![](media/image35.png)
+  ![](media/image32.png)
 
-The defined operations are now showing up as a policy scope.
+- We can add new operations manually. We will add an operation for the **http://conferenceapi.azurewebsites.net/Speakers** operation.
 
-![](media/image36.png)
+  > **TRY:** Add this operation to your own API. First test the operation using a GET request against your back-end API and then add it to your API Management front-end API.
 
-The configured Rewrite rule is simply a policy.
+  ![](media/image33.png)
 
-Back to the Speakers Operation configuration and let us define some known responses.
+  ![](media/image34.png)
 
-![](media/image37.png)
+- Let’s take a short detour over to policies,
 
-Returning to the developer console we can see the documentation for our Speakers operation.
+  ![](media/image35.png)
 
-![](media/image38.png)
+- The defined operations are now showing up as a policy scope. The configured Rewrite rule is simply a policy.
 
-For a large API, creating all the operation descriptions could take a while. Another option is to import the operations based on an API Description language.
+  ![](media/image36.png)
 
-.Net APIs can generate an API Description language document using a library called Swash buckle.
+- Back to the Speakers Operation configuration and let us define some known responses. These known responses are useful to developers using our API because they can know what to expect in a JSON response for their requests to the Operation.
 
-![](media/image39.png)
+  > **TRY:** Execute the Speakers API operation and view the response. Use this information to create a JSON representation of the response. An example is shown in the screenshot below.
 
-Review imported operations,
+  ![](media/image37.png)
 
-![](media/image40.png)
+- Returning to the developer portal, we can see the documentation for our Speakers operation.
 
-And parameters,
+  > **TRY:** View the new page for the Speakers operation. You should see useful information on the page including a representation of the JSON response.
 
-![](media/image41.png)
+  ![](media/image38.png)
 
-And responses,
+## Importing API Specifications
 
-![](media/image42.png)
+- For a large API, creating all the operation descriptions could take a while. Another option is to import the operations based on an API Description language.
 
-Response types are defined based on formatters available.
+- .Net APIs can generate an API Description language document using a library called **Swashbuckle**. This library is an implementation of the Swagger standard for describing APIs using the JSON content format. You can import an entire API into API Management using a Swagger JSON file.
 
-Swashbuckle doesn’t support representation examples out of the box unfortunately. So they need to be added manually. Unfortunately, importing an existing API doesn’t merge.
+  > **TRY:** The Swagger documentation for our back-end API is located at http://conferenceapi.azurewebsites.net/swagger/docs/v1. Take a moment to view the document and then import it as a new API using the API Management portal. It is recommended to give the API a URL suffix so you can tell the difference between this API and the first API you created (Conference Api).
 
-![](media/image43.png)
+  ![](media/image39.png)
 
-So, lets head back over to the developer console to see what this import gives us.
+- Once you have imported your new API, review the imported operations.
 
-![](media/image44.png)
+  ![](media/image40.png)
 
-Getting ASP.Net Routing to sync with Swashbuckle and OpenAPI specification can be challenging. There is a risk that for a non-trivial API the effort to generate the right API description automatically and deal with merge issues, the less time saved over just manually defining the API.
+- You can drill down into each operation and view the parameters
 
-A compromise is to hand craft the OpenAPI specification and then import that.
+  ![](media/image41.png)
 
-![](media/image45.png)
+- Operations also include metadata about responses. Response types are defined based on formatters available.
 
-### Styling
+  ![](media/image42.png)
 
-![](media/image46.png)
+    > **TRY:** View the parameters, responses and metadata for each operation you imported using both the API Management portal and the Developer portal. Add this API to the *Free & Wild* product and then make a few sample requests to make sure that you understand how the API works.
+
+- Swashbuckle doesn’t support representation examples out of the box unfortunately. So they need to be added manually. Unfortunately, importing an existing API doesn’t merge.
+
+  ![](media/image43.png)
+
+- So, lets head back over to the developer portal to see what this import gives us.
+
+  ![](media/image44.png)
+
+- Getting ASP.Net Routing to sync with Swashbuckle and OpenAPI specification can be challenging. There is a risk that for a non-trivial API the effort to generate the right API description automatically and deal with merge issues, the less time saved over just manually defining the API.
+
+- A compromise is to hand craft the OpenAPI specification and then import that.
+
+  > **TRY:** Import the OpenAPI spec as another new APi in API Management. View the parameters, responses and metadata for each operation you imported using both the API Management portal and the Developer portal. Add this API to the *Free & Wild* product and then make a few sample requests to make sure that you understand how the API works.
+
+  ![](media/image45.png)
+
+## Styling
+
+- You can customize the CSS values for many different properties in the Developer portal.
+
+  > **TRY:** Click on the branding icon on the left of the Developer Portal (you must be signed in as an administrator). Update the branding to use a different set of colors and other values (font-sizes, heights, etc.).
+
+  ![](media/image46.png)
 
 ## Security
 
-In order to protect the origin server from direct access we need to enable security on the origin server. Change the Web service URL to use https scheme as basic auth is enabled for https for this particular API.
+- In order to protect the origin server from direct access we need to enable security on the origin server. Change the Web service URL to use https scheme as basic auth is enabled for https for this particular API.
 
-![](media/image47.png)
+  > **TRY:** Update the Conference Api (first Api you created) to reference the back-end api using *HTTPS* instead of *HTTP*.
 
-Setup the Basic Auth credentials to allow API Management to call the origin server. The password is “rocks”.
+  ![](media/image47.png)
 
-![](media/image48.png)
+- In the **Security** tab, you can configure authentication from API Management to the back-end API.
 
-## User Authorization
+  > **TRY:** Setup the Basic Auth credentials to allow API Management to call the origin server. The username is *apim* and the password is *rocks*.
+
+  ![](media/image48.png)
+
+## Recap
+
+In this exercise we:
+
+  - Created a custom page for the developer portal
+  - Updated our documentation to more accurately reflect our API
+  - Imported Swagger documentation to import API endpoints and documentation in-mass.
+  - Rebranded the developer portal using CSS values
+  - Implemented authentication between our API tiers.
+
+## (Bonus) User Authorization
+
+> Setting up user authentication requires you to create a client application. This is beyond the scope of this bootcamp but it is easily something you can do on your own time. We have included screenshots to help you get started.
 
 This is used to setup the Developer Console as a Client Application
 
