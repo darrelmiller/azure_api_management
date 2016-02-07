@@ -1,6 +1,6 @@
 # Exploring the API Management Service and Portal
 
-We are going to create operations, APIs and Products using API Management. This will allow us to control which of our back-end API endpoints are available to clients and how we would like to protect and prevent abuse of those endpoints.
+We are going to create APIs, operations and Products using API Management. This will allow us to control which of our back-end API resources are available to clients and how we would like to protect and prevent abuse of those endpoints.
 
 ## Creating Your First API
 
@@ -30,8 +30,8 @@ We are going to create operations, APIs and Products using API Management. This 
 1. On the **New Operation** screen, specify the following field values and then click the **Save** button:
 
   - **HTTP verb**: GET
-  - **URL template**: /
-  - **Display name**: *
+  - **URL template**: /*
+  - **Display name**: All
   - Leave remaining options set to their default values.
 
   ![](media/alt_image6.png)
