@@ -23,3 +23,7 @@ In this bootcamp, we will explore the various features of the API Management pla
 ## Learn More about API Management
 
 All the API Management documentation, reference materials, samples, how-tos, videos and screencasts can be found at **http://aka.ms/apimrocks**.
+
+## License
+
+License information can be found [here](license).
